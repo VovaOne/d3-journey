@@ -1,0 +1,12 @@
+.tick > line {
+    stroke: #EBD8C1;
+}
+
+text {
+    fill: #EBD8C1;
+}
+
+path.domain {
+    stroke: none;
+    fill: none;
+}
