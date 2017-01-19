@@ -80,7 +80,7 @@ document.addEventListener("DOMContentLoaded", function () {
         .text(function (d) {
           return d.id
         })
-        .style("text-anchor", "middle")
+        .style("text-anchor", "middle");
 
       d3.select("svg")
         .append("g")
@@ -95,8 +95,20 @@ document.addEventListener("DOMContentLoaded", function () {
         .text(function (d) {
           return d.id
         })
-        .style("text-anchor", "end")
+        .style("text-anchor", "end");
+
+      d3
+        .selectAll("rect.grid")
+        .on("mouseover", gridOver);
+
+
     }
+  }
+
+  function gridOver(d, i) {
+    d3.selectAll("rect").style("stroke-width", function (p) {
+      return p.x == d.x || p.y == d.y ? "3px" : "1px"
+    });
   }
 
 
